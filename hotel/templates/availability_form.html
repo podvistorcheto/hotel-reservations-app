@@ -1,3 +1,4 @@
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +11,12 @@
     
 </head>
 <body>
-    <form action="" method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Book Room</button>
-    </form>
+    <div class="content-section">
+        <form action="" method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit">Book Room</button>
+        </form>
+    </div>
 </body>
 </html>
