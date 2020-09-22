@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve Room</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/jquery-ui.js">
+    
+</head>
+<body>
+    <form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Book Room</button>
+    </form>
+</body>
+</html>

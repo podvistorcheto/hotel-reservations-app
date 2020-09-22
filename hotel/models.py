@@ -26,13 +26,15 @@ class Room(models.Model):
 
 
 class Booking(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE)
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
     adults = models.IntegerField()
     children = models.IntegerField()
     check_in = models.DateTimeField()
     check_out = models.DateTimeField()
     specials = models.TextField()
+    date_posted = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return f'{self.user} booked {self.room} from {self.check_in} adults and {self.check_out} children'
