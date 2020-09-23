@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'hotel.booking_functions',
     'profiles',
     'crispy_forms',
-    'reservation',
 ]
 
 MIDDLEWARE = [

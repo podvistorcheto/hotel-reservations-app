@@ -6,7 +6,7 @@ from hotel.booking_functions.availability import check_availability
 
 
 def test_one(request):
-    return render(request, 'hotel/home.html')
+    return render(request, 'hotel/base.html')
 
 
 def test_two(request):

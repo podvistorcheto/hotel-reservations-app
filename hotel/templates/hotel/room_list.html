@@ -1,9 +1,57 @@
 {% extends "hotel/base.html" %}
+{% load static %}
+
+    
+
 {% block content %}
-    {% for room in room_list %}
+    <div class="container">
         <div class="row">
-        <h6>{{ room }}</h6>
+            <div class="col text-center mt-3">
+                <h2 class="logo-font">Rooms</h2>
+                <hr class="w-100 mb-1">
+            </div>
+        <div class="row">
+        {% for room in room_list %}
+        <div class="col-sm-6 col-md-6 col-lg-4">
+        <div class="card h-100 border-0"
+        <a href="#">
+            <img class="card-img-top img-fluid" src="../media/room_1.jpg" alt="...">
+        </a>
+        <div class="card-body pb-0">
+                                    <p class="mb-0">{{ room.category }}</p>
         </div>
-    {% endfor %}     
-{% endblock content %}
+        <div class="card-footer bg-white pt-0 border-0 text-left">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="lead mb-0 text-left font-weight-bold"></p>
+                                            
+                                                <small class="text-muted"><i class="fas fa-chart-line"></i></small>
+                                            
+                                                <small class="text-muted">No Dashboard</small>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+        <h4>{{ room }}</h4>
+        </div>
+        </div>
+                        {% if forloop.counter|divisibleby:1 %}
+                            <div class="col-12 d-sm-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}                        
+                        {% if forloop.counter|divisibleby:2 %}
+                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:3 %}
+                            <div class="col-12 d-none d-lg-block mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+    {% endfor %} 
+    </div>
+
+{% endblock %}
 
