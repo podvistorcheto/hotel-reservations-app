@@ -1,0 +1,16 @@
+{% extends 'base.html'}
+{% endblock %}
+
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+{% block extra_css %}
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/jquery-ui.js">
+{% endblock %}
+    <div class="content-section">
+        <form action="" method="POST" id="payment-form">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit">Book Room</button>
+        </form>
+    </div>
+{% endblock %}
