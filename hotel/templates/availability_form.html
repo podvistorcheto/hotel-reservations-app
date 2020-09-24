@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserve Room</title>
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>    
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
     <div class="content-section">
@@ -24,6 +25,7 @@
         </form>
     </div>
     {% block postload_js %}
+    
     <script src="{% static 'hotel/datepicker.js' %}"></script>
 	{% endblock %}
 </body>
