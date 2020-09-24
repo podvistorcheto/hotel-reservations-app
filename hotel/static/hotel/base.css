@@ -1,13 +1,13 @@
 body {
   background: url('/media/thevilla.jpg') no-repeat center center fixed;
   background-size: cover;
-  margin-top: 5rem;
+  margin-top: 3.5rem;
   width: 100%;
   height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #f5eeee;
+  color: #5b642f;
 }
 
 ul {

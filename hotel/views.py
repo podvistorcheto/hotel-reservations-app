@@ -10,7 +10,11 @@ def test_one(request):
 
 
 def test_two(request):
-    return render(request, 'hotel/about.html', {'title': 'About'})
+    return render(request, 'hotel/home.html', {'title': 'About'})
+
+
+def go_to_gallery(request):
+    return render(request, 'hotel/gallery.html')
 
 
 class RoomList(ListView): 
