@@ -1,5 +1,5 @@
 body {
-  background: url('/media/thevilla.jpg') no-repeat center center fixed;
+  background: url('/media/backgroun_villa.jpg') no-repeat center center fixed;
   background-size: cover;
   margin-top: 3.5rem;
   width: 100%;
@@ -85,7 +85,7 @@ a.article-title:hover {
   font-size: 2.5rem;
 }
 
-/* ROOMS */
+/* rooms page override */
 
 .overlay {
     height: 100%;
@@ -95,4 +95,19 @@ a.article-title:hover {
     position: fixed;
     background: #fafafa;
     z-index: -1;
+}
+
+/* gallerry */
+
+.main-image img,
+.imgs img {
+    width: 100%;
+    height: 75%;
+}
+
+
+.imgs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.2rem;
 }
