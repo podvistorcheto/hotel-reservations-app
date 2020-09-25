@@ -22,7 +22,7 @@ class Room(models.Model):
     children_capacity = models.IntegerField(null=True)
 
     def __str__(self):
-        return f'{self.number}. {self.category} with {self.beds} beds for {self.capacity} adults and {self.children_capacity} children'
+        return f'{self.category}'
 
 
 class Booking(models.Model):
@@ -33,7 +33,7 @@ class Booking(models.Model):
     children = models.IntegerField()
     check_in = models.DateTimeField()
     check_out = models.DateTimeField()
-    specials = models.TextField()
+    specials = models.TextField(max_length=256, null=True)
     date_posted = models.DateTimeField(default=timezone.now)
 
     def __str__(self):

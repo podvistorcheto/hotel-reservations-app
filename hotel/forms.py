@@ -16,4 +16,4 @@ class CheckRoomsForm(forms.Form):
     children = forms.IntegerField()
     check_in = forms.DateTimeField()
     check_out = forms.DateTimeField()
-    specials = forms.CharField(label='Special Request', max_length=100)
+    specials = forms.CharField(label='Special Request', max_length=100, required=False)
