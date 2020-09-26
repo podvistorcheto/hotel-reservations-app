@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, get_object_or_404, reverse
 from .models import Room, Booking
 from django.views.generic import ListView, FormView
 from .forms import CheckRoomsForm
@@ -21,10 +21,6 @@ class RoomList(ListView):
     model = Room 
 
 
-class BookingList(ListView): 
-    model = Booking 
-
-
 class BookingView(FormView):
     form_class = CheckRoomsForm
     template_name = 'availability_form.html'
@@ -39,15 +35,26 @@ class BookingView(FormView):
         if len(available_rooms)>0:
             room = available_rooms[0]
             booking = Booking.objects.create(
+                first_name = data['first_name'],
+                last_name = data['last_name'],
                 user = self.request.user,
                 room = room,
                 adults = data['adults'],
                 children = data['children'],
                 check_in = data['check_in'],
                 check_out = data['check_out'],
-                specials = ['specials'],
+                specials = data['specials'],
             )
             booking.save()
             return HttpResponse(booking)
         else:
-            return HttpResponse('These rooms are booked the dates you are looking for.')
+            return HttpResponse(
+                'These rooms are booked the dates you are looking for.')
+
+
+class BookingList(ListView):
+    model = Booking
+    template_name = 'bookings.html'
+
+    def booking_list(self):
+        return render(self, 'bookings.html')

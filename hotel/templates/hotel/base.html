@@ -42,7 +42,7 @@
 			<div class="container">
                     <div>
                     <a class="navbar-brand mr-4" href="#"><i class="fas fa-map-marker-alt"></i></a>
-                    <a class="navbar-brand mr-4" href="#">hotel<strong>Podvis Bor</strong></a>
+                    <a class="navbar-brand mr-4" href="{% url 'page-one' %}">hotel<strong>Podvis Bor</strong></a>
                     </div>
 
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,8 +54,8 @@
                         </div>
                         <!-- Navbar Right Side -->
                         <div class="navbar-nav title-menu">
-                            <a class="nav-item nav-link" href="{% url 'page-two' %}">Book now</a>
-                            <a class="nav-item nav-link" href="{% url 'page-two' %}">Location</a>
+                            <a class="nav-item nav-link" href="{% url 'booking-view' %}">Book now</a>
+                            <a class="nav-item nav-link" href="{% url 'gallery-page' %}">Location</a>
                             <a class="nav-item nav-link" href="#">Login</a>
                             <a class="nav-item nav-link" href="#">Register</a>
                         </div>

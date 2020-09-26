@@ -2,8 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.conf import settings
-
-# The Room model
+from django.urls import reverse
 
 
 class Room(models.Model):
@@ -26,15 +25,18 @@ class Room(models.Model):
 
 
 class Booking(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE)
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
-    adults = models.IntegerField()
-    children = models.IntegerField()
-    check_in = models.DateTimeField()
-    check_out = models.DateTimeField()
-    specials = models.TextField(max_length=256, null=True)
+    adults = models.IntegerField(null=True)
+    children = models.IntegerField(null=True)
+    check_in = models.DateTimeField(null=True)
+    check_out = models.DateTimeField(null=True)
+    specials = models.TextField(
+        max_length=256, null=True)
     date_posted = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return f'{self.user} booked {self.room} from {self.check_in} adults and {self.check_out} children'
+        return f'{self.user} booked {self.room} from {self.check_in} to {self.check_out}'
