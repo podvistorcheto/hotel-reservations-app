@@ -1,29 +1,25 @@
-from django.shortcuts import render, HttpResponse, get_object_or_404, reverse
+from django.shortcuts import render, HttpResponse
 from .models import Room, Booking
 from django.views.generic import ListView, FormView
 from .forms import CheckRoomsForm
 from hotel.booking_functions.availability import check_availability
 
 
-def test_one(request):
-    return render(request, 'hotel/base.html')
-
-
-def test_two(request):
-    return render(request, 'hotel/home.html', {'title': 'About'})
-
-
-def go_to_gallery(request):
-    return render(request, 'hotel/gallery.html')
+def hotel_home(self):
+    return render(self, "reservation_form.html")
 
 
 class RoomList(ListView): 
-    model = Room 
+    model = Room
+
+
+class BookingList(ListView): 
+    model = Booking
 
 
 class BookingView(FormView):
     form_class = CheckRoomsForm
-    template_name = 'availability_form.html'
+    template_name = 'reservation_form.html'
 
     def form_valid(self, form):
         data = form.cleaned_data
@@ -50,11 +46,3 @@ class BookingView(FormView):
         else:
             return HttpResponse(
                 'These rooms are booked the dates you are looking for.')
-
-
-class BookingList(ListView):
-    model = Booking
-    template_name = 'bookings.html'
-
-    def booking_list(self):
-        return render(self, 'bookings.html')

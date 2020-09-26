@@ -14,5 +14,3 @@ function imgClick(e) {
     // grey-out the grid image which main-photo
     e.target.style.opacity = opacity;
 }
-
-    
