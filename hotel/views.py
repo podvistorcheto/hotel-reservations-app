@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from .models import Room, Booking
-from django.views.generic import ListView, FormView
+from django.views.generic import ListView, FormView, DetailView
 from .forms import CheckRoomsForm
 from hotel.booking_functions.availability import check_availability
 
@@ -49,3 +49,8 @@ class BookingView(FormView):
         else:
             return HttpResponse(
                 'These rooms are booked the dates you are looking for.')
+
+
+class BookingDetailsView(DetailView):
+    model = Booking
+    template_name = "booking_detail.html"
