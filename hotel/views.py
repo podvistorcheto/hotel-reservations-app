@@ -5,16 +5,19 @@ from .forms import CheckRoomsForm
 from hotel.booking_functions.availability import check_availability
 
 
-def hotel_home(self):
-    return render(self, "reservation_form.html")
-
-
-class RoomList(ListView): 
+class Gallery(ListView):
     model = Room
+    template_name = "gallery.html"
+
+
+class RoomList(ListView):
+    model = Room
+    template_name = 'rooms.html'
 
 
 class BookingList(ListView): 
     model = Booking
+    template_name = 'bookings.html'
 
 
 class BookingView(FormView):

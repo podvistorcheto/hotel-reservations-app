@@ -29,13 +29,13 @@ class Booking(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE)
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
-    adults = models.IntegerField()
-    children = models.IntegerField()
-    check_in = models.DateTimeField()
-    check_out = models.DateTimeField()
+    adults = models.IntegerField(null=False)
+    children = models.IntegerField(null=True)
+    check_in = models.DateTimeField(null=False)
+    check_out = models.DateTimeField(null=False)
     specials = models.TextField(
         max_length=256, null=True)
-    date_posted = models.DateTimeField(default=timezone.now)
+    date_posted = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f'{self.user} booked {self.room} from {self.check_in} to {self.check_out}'

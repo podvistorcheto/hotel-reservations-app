@@ -46,7 +46,7 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                                 <a href="#" class="nav-link main-logo-link">
                     <h2 class="logo-font text-black my-0">Reviews Score<strong>8.7</strong></h2>
-                    <p>59 guest reviews</p>
+                    <p class="text-success">59 guest reviews</p>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -74,12 +74,12 @@
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
                             <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                <div><i class="fas fa-bed"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}
                                         ${{ grand_total|floatformat:2 }}
                                     {% else %}
-                                        $0.00
+                                        Book Now
                                     {% endif %}
                                 </p>
                             </div>
