@@ -56,6 +56,27 @@ body {
     border: 1px solid black !important;
 }
 
+.overlay {
+    height: 100%;
+    width: 100%;
+    top:0;
+    left: 0;
+    position: fixed;
+    background: #fafafa;
+    z-index: -1;
+}
+
+.main-image img,
+.imgs img {
+    width: 100%;
+}
+
+.imgs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

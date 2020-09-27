@@ -1,29 +1,41 @@
-{% extends "base.html" %} {% load static %}{% block content %}
+{% extends "base.html" %} 
+{% load static %}
 
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
 
-<div class="overlay">
-</div>
-	<div class="container">
-		<div class="main-image">
-			<img src="../media/img1.jpg" id="current">
-	    </div>
-			<div class="imgs">
-				<img src="../media/img1.jpg">
-				<img src="../media/img2.jpg">
-				<img src="../media/img3.jpg">
-				<img src="../media/img4.jpg">
-				<img src="../media/img5.jpg">
-				<img src="../media/strandzha.jpg">
-				<img src="../media/capture2.jpg">
-				<img src="../media/img8.jpg">
-				<img src="../media/img9.jpg">
-				<img src="../media/dvoina49.jpg">
-				<img src="../media/img12.jpg">
-				<img src="../media/img13.jpg">
-				<img src="../media/img14.jpg">
-				<img src="../media/backgroun_villa.jpg">
-	        </div>
+{% block content %}
+
+<div class="overlay"></div>
+<div class="container">
+	<div class="col text-center mt-3">
+		<h2 class="logo-font">gallery</h2>
+		<hr class="w-100 mb-1">
 	</div>
-{% block postload_js %}
-<script src="{% static 'hotel/gallery.js' %}"></script>
-{% endblock %} {% endblock %}
+	<div class="main-image">
+		<img src="/media/img1.jpg" id="current">
+        <hr>
+	</div>
+		<div class="imgs">
+			<img src="/media/img1.jpg">
+			<img src="/media/img2.jpg">
+			<img src="/media/img3.jpg">
+			<img src="/media/img4.jpg">
+			<img src="/media/img5.jpg">
+			<img src="/media/strandzha.jpg">
+			<img src="/media/capture2.jpg">
+			<img src="/media/img8.jpg">
+			<img src="/media/img9.jpg">
+			<img src="/media/dvoina49.jpg">
+			<img src="/media/img12.jpg">
+			<img src="/media/img13.jpg">
+			<img src="/media/img14.jpg">
+			<img src="/media/backgroun_villa.jpg">
+	    </div>
+		</div>
+{% endblock %} 
