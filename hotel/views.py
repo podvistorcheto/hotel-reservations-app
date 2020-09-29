@@ -1,10 +1,12 @@
+from django.urls import reverse_lazy
 from django.shortcuts import render, HttpResponse, redirect, reverse
 from .models import Room, Booking
 from django.views.generic import (
     ListView,
     FormView,
     DetailView,
-    UpdateView
+    UpdateView,
+    DeleteView
 )
 from .forms import CheckRoomsForm
 from hotel.booking_functions.availability import check_availability
@@ -102,3 +104,38 @@ class BookingUpdateView(UpdateView):
         else:
             return HttpResponse(
                 'These rooms are booked the dates you are looking for.')
+
+
+class BookingDeleteView(DeleteView):
+    model = Booking
+    template_name = "booking_delete.html"
+    success_url = reverse_lazy('bookings')
+    fields = (
+        'first_name',
+        'last_name',
+        'user',
+        'room',
+        'adults',
+        'children',
+        'check_in',
+        'check_out',
+        'specials',
+        )
+
+    def delete_booking(self, form, pk):
+        booking = Booking.objects.get(id=pk)
+        form = CheckRoomsForm(instance=booking)
+        if form.method == "POST":
+            booking = Booking.objects.delete(
+                first_name = data['first_name'],
+                last_name = data['last_name'],
+                user = self.request.user,
+                room = room,
+                adults = data['adults'],
+                children = data['children'],
+                check_in = data['check_in'],
+                check_out = data['check_out'],
+                specials = data['specials'], # should look for option to auto_add modified at: dd/mm/yyyy
+            )
+            booking.delete()
+            return HttpResponse('Reservation cancelled successfully')
