@@ -1,4 +1,5 @@
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, HttpResponse, redirect, reverse
 from .models import Room, Booking
 from django.views.generic import (
@@ -100,7 +101,7 @@ class BookingUpdateView(UpdateView):
                 specials = data['specials'], # should look for option to auto_add modified at: dd/mm/yyyy
             )
             booking.save()
-            return HttpResponse(booking)
+            return reverse(self, "booking-details", kwargs={"pk": self.pk})
         else:
             return HttpResponse(
                 'These rooms are booked the dates you are looking for.')

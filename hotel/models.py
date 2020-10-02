@@ -44,6 +44,5 @@ class Booking(models.Model):
     def __str__(self):
         return f'{self.user} booked {self.room} from {self.check_in} to {self.check_out}'
 
-
-def get_absolute_url(self):
-    return reverse("booking-details", kwargs={"pk": self.pk})
+    def get_absolute_url(self):
+        return reverse("booking-details", kwargs={"pk": self.pk})
