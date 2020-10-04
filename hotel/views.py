@@ -23,7 +23,7 @@ class RoomList(ListView):
     template_name = 'rooms.html'
 
 
-class BookingList(ListView): 
+class BookingList(ListView):
     model = Booking
     template_name = 'bookings.html'
 

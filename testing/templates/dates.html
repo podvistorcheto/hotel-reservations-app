@@ -14,14 +14,14 @@
     <div class="container h-100">
     <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">Reserve your stay</h2>
+                <h2 class="logo-font">Pick a date</h2>
                 <hr class="w-100 mb-1">
             </div>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-6">
-            <form action="" method="POST">
+            <form action="{% url 'testing' %}" method="POST">
                 {% csrf_token %}
                 {{ form|crispy }}
                <button class="btn btn-primary" type="submit" name="button">Book</button>
@@ -30,7 +30,7 @@
         </div>
     </div>
 {% block postload_js %}
-    <script src="{% static 'hotel/datepicker.js' %}"></script>
+    <script src="{% static 'testing/datepicker.js' %}"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 {% endblock %}
