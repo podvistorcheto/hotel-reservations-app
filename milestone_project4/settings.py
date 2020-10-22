@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'home',
     'django_countries',
     'profiles',
-    'testing'
+    'testing',
 ]
 
 MIDDLEWARE = [

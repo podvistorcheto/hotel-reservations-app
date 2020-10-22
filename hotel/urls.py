@@ -11,7 +11,6 @@ from .views import (
 
 urlpatterns = [
     path('', RoomList.as_view(), name='rooms'),
-
     path('gallery/', Gallery.as_view(), name='gallery'),
     path('reserve/', BookingView.as_view(), name='reserve'),
     path('bookings/', BookingList.as_view(), name='bookings'),
