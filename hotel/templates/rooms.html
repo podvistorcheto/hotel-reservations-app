@@ -17,31 +17,30 @@
                 <h2 class="logo-font">Rooms</h2>
                 <hr class="w-100 mb-1">
             </div>
-        <div class="row">
-        {% for room in room_list %}
-        <div class="col-sm-6 col-md-6 col-lg-4">
-        <div class="card h-100 border-0">
-        <a href="#">
-            <img class="card-img-top img-fluid" src="../media/dvoina49.jpg" alt="...">
-        </a>
-        <div class="card-body pb-0">
-                                    <p class="mb-0">{{ room.category }}</p>
-        </div>
-        <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold"></p>
-                                            
-                                                <small class="text-muted"><i class="fas fa-chart-line"></i></small>
-                                            
-                                                <small class="text-muted">No Dashboard</small>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-        <h4>{{ room }}</h4>
-        </div>
-        </div>
+		<div class="row">
+			{% for room in room_list %}
+			<div class="col-sm-6 col-md-6 col-lg-4">
+				<div class="card h-100 border-0">
+					<a>
+						<h4 class="mb-0">{{ room.category }}</h4>
+						<img class="card-img-top img-fluid" src="../media/dvoina49.jpg" alt="...">
+		        </a>
+						<div class="card-body pb-0">
+		
+						</div>
+						<div class="card-footer bg-white pt-0 border-0 text-left">
+							<div class="row">
+								<div class="col">
+									<p class="lead mb-0 text-left font-weight-bold"></p>
+									<a href="{% url 'reserve' %}" class="shop-now-button btn rounded-0 text-uppercase py-3">Book
+									</a>
+								</div>
+							</div>
+						</div>
+						<small class="text-muted"><i class="fas fa-chart-line"></i></small>
+						<small class="text-muted">No Dashboard</small>
+				</div>
+			</div>
                         {% if forloop.counter|divisibleby:1 %}
                             <div class="col-12 d-sm-none mb-5">
                                 <hr>

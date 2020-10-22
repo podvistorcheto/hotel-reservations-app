@@ -27,13 +27,12 @@
                <button class="btn btn-primary" type="submit" name="button">Book</button>
             </form>
             </div>
-            <h4>Details</h4>
+           
             
                         <div class="col-12 col-lg-6">
-                     {% for room in room_list %}
                         <div class="card h-100 border-0">
-					<a>
-						<h4 class="mb-0">{{ room.category }}</h4>
+					<a><h4>Room Details</h4>
+						<h4 class="mb-0">{{ unit.category }}</h4>
 						<img class="card-img-top img-fluid" src="../media/dvoina49.jpg" alt="...">
 		        </a>
 						<div class="card-body pb-0">
@@ -43,8 +42,6 @@
 							<div class="row">
 								<div class="col">
 									<p class="lead mb-0 text-left font-weight-bold"></p>
-									<a href="{% url 'reserve' %}" class="shop-now-button btn rounded-0 text-uppercase py-3">Book
-									</a>
 								</div>
 							</div>
 						</div>
@@ -53,8 +50,7 @@
 				</div>
             </div>
         </div>
-    </div>
-    {% endfor %} 
+    </div> 
 {% block postload_js %}
     <script src="{% static 'hotel/datepicker.js' %}"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>

@@ -11,10 +11,10 @@ class CheckRoomsForm(forms.Form):
         ('apt', 'Apartment'),
         ('dapt', 'Deluxe Apartment'),
     )
-    first_name = forms.CharField(max_length=30)
-    last_name = forms.CharField(max_length=30)
     room_category = forms.ChoiceField(
         choices=ROOM_CATEGORIES, required=True)
+    first_name = forms.CharField(max_length=30)
+    last_name = forms.CharField(max_length=30)
     adults = forms.IntegerField()
     children = forms.IntegerField()
     check_in = forms.DateTimeField()

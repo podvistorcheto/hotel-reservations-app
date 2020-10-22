@@ -1,15 +1,37 @@
 from django.contrib import admin
-from .models import Product
+from .models import Unit, Reservation
+
+# Register your models here.
 
 
-class ProductAdmin(admin.ModelAdmin):
+class UnitAdmin(admin.ModelAdmin):
     list_display = (
-        'first_name',
-        'last_name',
-        'date_started',
-        'date_due',
+        'number',
+        'category',
+        'beds',
+        'capacity',
+        'children_capacity',
     )
     readonly_fields = ('pk',)
 
+    ordering = ('number',)
 
-admin.site.register(Product, ProductAdmin)
+
+class ReservationAdmin(admin.ModelAdmin):
+    list_display = (
+        'first_name',
+        'last_name',
+        'user',
+        'room',
+        'adults',
+        'children',
+        'check_in',
+        'check_out',
+        'specials',
+        )
+    readonly_fields = ('pk', 'date_posted')
+
+    ordering = ('date_posted',)
+
+admin.site.register(Unit, UnitAdmin)
+admin.site.register(Reservation,ReservationAdmin)
