@@ -32,13 +32,13 @@
 							<div class="row">
 								<div class="col">
 									<p class="lead mb-0 text-left font-weight-bold"></p>
-									<a href="{% url 'reserve' %}" class="shop-now-button btn rounded-0 text-uppercase py-3">Book
+									<a href="{% url 'reserve' %}" class="shop-now-button btn rounded-1 text-uppercase py-3">Book
+                                    <p class="text-uppercase">&euro;{{ room.price }}/per night</p>
 									</a>
+                                    
 								</div>
 							</div>
 						</div>
-						<small class="text-muted"><i class="fas fa-chart-line"></i></small>
-						<small class="text-muted">No Dashboard</small>
 				</div>
 			</div>
                         {% if forloop.counter|divisibleby:1 %}

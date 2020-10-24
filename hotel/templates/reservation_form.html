@@ -27,34 +27,36 @@
                <button class="btn btn-primary" type="submit" name="button">Book</button>
             </form>
             </div>
-            <h4>Details</h4>
-            
-                        <div class="col-12 col-lg-6">
-                     {% for room in room_list %}
-                        <div class="card h-100 border-0">
-					<a>
-						<h4 class="mb-0">{{ room.category }}</h4>
-						<img class="card-img-top img-fluid" src="../media/dvoina49.jpg" alt="...">
-		        </a>
-						<div class="card-body pb-0">
-		
-						</div>
-						<div class="card-footer bg-white pt-0 border-0 text-left">
-							<div class="row">
-								<div class="col">
-									<p class="lead mb-0 text-left font-weight-bold"></p>
-									<a href="{% url 'reserve' %}" class="shop-now-button btn rounded-0 text-uppercase py-3">Book
-									</a>
-								</div>
-							</div>
-						</div>
-						<small class="text-muted"><i class="fas fa-chart-line"></i></small>
-						<small class="text-muted">No Dashboard</small>
+            <div class="col-12 col-lg-6">
+			<div class="card h-100 border-0">
+				<a>
+					<h4>Room Name</h4>
+					<h4 class="mb-0">{{ unit.category }}</h4>
+					<img class="card-img-top img-fluid" src="/media/dvoina49.jpg" alt="...">
+				        </a>
+					<div class="card-body pb-0">
+                    <div>Mini gallery here</div>
+                    <hr class="w-100 mb-1">
+						<li class="list-inline-item">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+							<div class="text-center">Price summary
+								<div><i class="fas fa-shopping-bag fa-lg"></i></div>
+								<p class="my-0">
+									{% if grand_total %}
+									${{ grand_total|floatformat:2 }}
+									{% else %}
+									&euro;0.00
+									{% endif %}
+								</p>
+                            </div>
+                        </a>
+                    </li>
+					</div>
 				</div>
             </div>
-        </div>
+            
+                    
     </div>
-    {% endfor %} 
 {% block postload_js %}
     <script src="{% static 'hotel/datepicker.js' %}"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>

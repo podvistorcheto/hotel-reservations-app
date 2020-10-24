@@ -11,6 +11,7 @@ class UnitAdmin(admin.ModelAdmin):
         'beds',
         'capacity',
         'children_capacity',
+        'price',
     )
     readonly_fields = ('pk',)
 
