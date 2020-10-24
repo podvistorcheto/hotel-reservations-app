@@ -10,6 +10,28 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+.bg-white {
+    background-color: #151616 !important;
+}
+
+.navbar-light .navbar-toggler {
+    color: rgba(190, 183, 186, 0.5);
+    border-color: rgba(190, 183, 186, 0.5);
+}
+
+.navbar-toggler {
+    padding: .25rem .75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: #fafafa;
+    border: 1px solid transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    border-radius: .25rem;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -49,7 +71,7 @@ body {
 }
 
 .text-black {
-    color: #000 !important;
+    color: rgb(240, 231, 231) !important;
 }
 
 .border-black {
